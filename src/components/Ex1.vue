@@ -1,7 +1,30 @@
 <script>
     export default { 
         // Add Code Here to complete the task
+        data(){
+            return {
+                operators: ["+", "-", "*", "/", "%"],
+                selectedOp: "+",
+                
+                x: "",
+                y: "",
+            }
+        },
         // Note: DO NOT USE "eval()". In security, "eval" is considered "evil"!!!
+        computed:{
+            result(){
+                const x = this.x;
+                const y = this.y; 
+
+                    switch(this.selectedOp) {
+                        case "+": return x + y;
+                        case "-": return x - y;
+                        case "*": return x * y;
+                        case "/": return x / y;
+                        case "%": return x % y;
+                }
+            }
+        }
     }
 </script>
 
